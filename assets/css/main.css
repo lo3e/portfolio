@@ -53,13 +53,12 @@ li > .active {
 	font-family: 'Lucida Console', monospace;
 }
 
-/* NICOLAS MESEGUER CONTACT INFO - Related*/
+/* LORENZO D'ERRICO CONTACT INFO - Related*/
 .profilepicture {
-	max-height: 300px;
-	min-width: 150px;
-	min-height: 150px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 150px;  /* Regola la dimensione a piacere */
+	height: 150px; /* La larghezza e l'altezza devono essere uguali per un cerchio perfetto */
+	border-radius: 50% !important;  /* Trasforma l'immagine in un cerchio */
+	object-fit: cover;
 }
 
 .fseneca {
