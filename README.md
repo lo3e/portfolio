@@ -89,7 +89,7 @@ Now you can access your very own portfolio at `https://yourusername.github.io` ð
 2. Add the class `language` to each `<tag>` you would like to translate, and include the `data-` attribute with the translation. For example, for a greeting in english and spanish:
 
 ```html
-<tag class="language" data-en="Hello" data-es="Hola">
+<tag class="language" data-en="Hello" data-it="Hola">
   <!-- You can leave this empty -->
 </tag>
 ```
@@ -111,7 +111,7 @@ Let's say you want to add a new section to your portfolio, called `Photos`. Here
       id="photos"
       href="#"
       data-en="Photos"
-      data-es="Fotos"
+      data-it="Fotos"
     ></a>
   </li>
 </ul>
@@ -153,7 +153,7 @@ Additionally, if you would like to hide a section, you can do so by adding the `
 ```html
 <li class="nav-item">
   <a class="nav-link d-none" id="photos" href="#" 
-    data-es="Fotos" 
+    data-it="Fotos" 
     data-en="Photos">
   </a>
 </li>

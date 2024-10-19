@@ -1,20 +1,33 @@
 $(document).ready(function(){
 	// By default, all the divs are hidden, if you were to add a new div, you should hide it here.
 	// If you want to show a div, you should clic on the corresponding link on the navbar.
-	$('#educationContent').hide();
-	$('#publicationsContent').hide();
-	$('#experienceContent').hide();
-	$('#conferencesContent').hide();
-	$('#projectsContent').hide();
-	$('#blogContent').hide();
-	$('#academicContent').hide();
-	$('#particularContent').hide();
-	// $('#photosContent').hide();
+	//$('#aboutmeContent').hide();
+	//$('#educationContent').hide();
+	//$('#publicationsContent').hide();
+	//$('#conferencesContent').hide();
 
 	// Options menu is hidden by default
 	$('#theme').hide();
 	$('#lan').hide();
 
+	/*
+	// Handle 'Home Me' content
+	$('#home').click(function(e) {
+
+		// If the div has already the class active, no need to reload the divs...
+		if(!$(e.target).hasClass('active')) {
+			// Update navbar
+			clearActiveLinks();
+			activateLink(e);
+
+			// Hide other contents
+			clearActiveDivs();
+
+			// Show current content
+			activateDiv('#homeContent');
+		}
+	});
+	
 	// Handle 'About Me' content
 	$('#aboutme').click(function(e) {
 
@@ -67,57 +80,6 @@ $(document).ready(function(){
 		}
 	});
 
-	// Handle 'Blog' content
-	$('#blog').click(function(e) {
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			activateLink(e);
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#blogContent');
-		}
-	});
-
-	// Handle 'Academic' content
-	$('#academic').click(function(e) {
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			activateLink(e);
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#academicContent');
-		}
-	});
-
-	// Handle 'Particular' content
-	$('#particular').click(function(e) {
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			activateLink(e);
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#particularContent');
-		}
-	});
-
 	// Handle 'Conferences' content
 	$('#conferences').click(function(e) {
 
@@ -134,26 +96,12 @@ $(document).ready(function(){
 			activateDiv('#conferencesContent');
 		}
 	});
+	*/
 
-	// Handle 'Experience' content
-	$('#experience').click(function(e) {
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			activateLink(e);
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#experienceContent');
-		}
-	});
-
-	// Handle 'Projects' content
-	$('#projects').click(function(e) {
+	// Handle navigation for each section
+	$('#navbarList .nav-link').click(function(e) {
+		// Get the target div id from the clicked link's id
+		const targetDivId = `#${e.target.id}Content`; // Assuming the content div ids are in the format [linkId]Content
 
 		// If the div has already the class active, no need to reload the divs...
 		if(!$(e.target).hasClass('active')) {
@@ -162,30 +110,15 @@ $(document).ready(function(){
 			activateLink(e);
 
 			// Hide other contents
-			clearActiveDivs();
+			//clearActiveDivs();
 
 			// Show current content
-			activateDiv('#projectsContent');
+			activateDiv(targetDivId);
+		} else {
+			// If the target div is already active, just scroll to it
+			scrollToContent(targetDivId);
 		}
 	});
-
-
-	// Handle 'Photos' content
-	// $('#photos').click(function(e) {
-
-	// 	// If the div has already the class active, no need to reload the divs...
-	// 	if(!$(e.target).hasClass('active')) {
-	// 		// Update navbar
-	// 		clearActiveLinks();
-	// 		activateLink(e);
-
-	// 		// Hide other contents
-	// 		clearActiveDivs();
-
-	// 		// Show current content
-	// 		activateDiv('#photosContent');
-	// 	}
-	// });
 
 	// **************************** //
 	// Handles the Publications events
@@ -198,15 +131,6 @@ $(document).ready(function(){
 		navigator.clipboard.writeText(text);
 
 		toastr.success('Citation copied');
-	});
-
-	// ******************** //
-	// Handles the Blog events
-	// ******************** //
-
-	// Opens the blog post in a new tab
-	$('.clickable').click(function(e) {
-		window.open($(e.currentTarget)[0].childNodes[1].innerText, '_blank').focus();
 	});
 
 
@@ -330,9 +254,7 @@ function activateDiv(divId) {
 
 // Scrolls to the content
 function scrollToContent(divId) {
-	if ($(window).width() < 751) {
-		$('html, body').animate({
-			scrollTop: $(divId).offset().top
-		}, 1);
-	}
+    $('html, body').animate({
+        scrollTop: $(divId).offset().top
+    }, 1); // You can adjust the duration of the scroll here (500ms)
 }

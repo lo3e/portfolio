@@ -1,6 +1,20 @@
 /* MOBILE's FIRST - Custom properties */
 /* This classes will be then modified for bigger screens */
 
+#top-nav {
+    position: fixed;  /*Fissa la navbar in cima */
+    top: 0;  /*Posiziona la navbar in alto */
+	/*left: 0;  Posiziona a sinistra */
+    width: 100%;  /*Larghezza completa */
+    z-index: 1000; /* Assicura che la navbar sia sopra ad altri contenuti */
+}
+
+/* Spaziatura per il contenuto della pagina */
+body {
+    padding-top: 60px; /* Imposta un padding per evitare che il contenuto sia nascosto dalla navbar */
+}
+
+
 #mowatave {
 	color: #2bd284 !important;
 	text-decoration: underline;
@@ -55,8 +69,8 @@ li > .active {
 
 /* LORENZO D'ERRICO CONTACT INFO - Related*/
 .profilepicture {
-	width: 150px;  /* Regola la dimensione a piacere */
-	height: 150px; /* La larghezza e l'altezza devono essere uguali per un cerchio perfetto */
+	width: 250px;  /* Regola la dimensione a piacere */
+	height: 250px; /* La larghezza e l'altezza devono essere uguali per un cerchio perfetto */
 	border-radius: 50% !important;  /* Trasforma l'immagine in un cerchio */
 	object-fit: cover;
 }
@@ -254,11 +268,6 @@ li > .active {
 	#hobbie1, #hobbie2, #hobbie3 {
 		text-align: left;
 		margin-top: 0;
-	}
-
-	.profilepicture {
-		margin-left: 0%;
-		margin-right: 0%;
 	}
 	
 	.abme-honors-bullet{
