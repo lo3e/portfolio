@@ -258,3 +258,17 @@ function scrollToContent(divId) {
         scrollTop: $(divId).offset().top
     }, 1); // You can adjust the duration of the scroll here (500ms)
 }
+
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('top-nav');
+    const sections = document.querySelectorAll('.container');
+    
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= navbar.offsetHeight && rect.bottom >= navbar.offsetHeight) {
+            section.style.paddingTop = navbar.offsetHeight + 'px';
+        } else {
+            section.style.paddingTop = '0';
+        }
+    });
+});
