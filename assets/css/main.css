@@ -220,3 +220,39 @@ html, body {
     padding: 20px; /* Un po' di spazio intorno al contenuto */
 	scroll-snap-align: start;
 }
+  
+  a:visited {
+	color: purple; /* Colore del link visitato */
+  }
+  
+  a {
+	text-decoration: none; /* Rimuove la sottolineatura dai link di default */
+  }
+  
+  a:hover {
+	text-decoration: underline;
+	color: blue /* Sottolinea il link al passaggio del mouse */
+  }
+  
+  .titolo {
+	font-size: 1.1em; /* Titolo leggermente più grande */
+	color: blue; /* Puoi regolare il colore */
+  }
+
+  .titolo:hover {
+	text-decoration: underline;
+  }  
+  
+  .autori {
+	font-size: 1em; /* Dimensione normale */
+	font-weight: lighter; /* Testo più sottile */
+	color: #555; /* Colore più chiaro rispetto al titolo */
+  }
+  
+  .rivista {
+	font-size: 0.9em; /* Dimensione un po' più piccola */
+	font-weight: lighter; /* Testo sottile */
+	color: #777; /* Colore ancora più chiaro */
+  }
+
+  
